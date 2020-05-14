@@ -58,7 +58,7 @@ y.setAttribute("type", "text");
 y.setAttribute("placeholder", "Name");
 r.setAttribute("draggable","true");
 r.setAttribute("ondragstart","drag(event)");
-y.setAttribute("height", "60");
+y.setAttribute("height", "6git0");
 y.setAttribute("width", "200")
 
 var g = document.createElement("IMG");
