@@ -45,9 +45,22 @@ Functions that will be called upon, when user click on the Name text field.
 function nameFunction(){
 
 var r = document.createElement('span');
+var newspan = document.createElement('span');
+var div1 = document.createElement("div");
+
+
 var y = document.createElement("INPUT");
-y.setAttribute("type", "Button");
+div1.setAttribute("id", "div1")
+div1.setAttribute("ondrop","drop(event)");
+div1.setAttribute("ondragover","allowDrop(event)");
+
+y.setAttribute("type", "text");
 y.setAttribute("placeholder", "Name");
+r.setAttribute("draggable","true");
+r.setAttribute("ondragstart","drag(event)");
+y.setAttribute("height", "50");
+y.setAttribute("width", "200")
+
 var g = document.createElement("IMG");
 g.setAttribute("src", "delete.png");
 increment();
@@ -55,9 +68,12 @@ incrementName();
 y.setAttribute("Name", "textelement_" + i);
 r.appendChild(y);
 g.setAttribute("onclick", "removeElement('myForm','id_" + i + "')");
+
+newspan.appendChild(div1);
 r.appendChild(g);
 r.setAttribute("id", "id_" + i);
 document.getElementById("myForm").appendChild(r);
+document.getElementById("myForm2").appendChild(newspan);
 
 
 
@@ -95,7 +111,7 @@ Functions that will be called upon, when user click on the Contact text field.
 function contactFunction(){
 var r = document.createElement('span');
 var y = document.createElement("INPUT");
-y.setAttribute("type", "text");
+y.setAttribute("type", "checkbox");
 y.setAttribute("placeholder", "Contact");
 var g = document.createElement("IMG");
 g.setAttribute("src", "delete.png");

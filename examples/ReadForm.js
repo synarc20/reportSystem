@@ -5,7 +5,6 @@ var db =  firebase.firestore();
 db.collection("cities").doc("LA")
     .onSnapshot(function(doc) {
 
-        alert (doc.data().nameIndex)
         console.log("Current data: ", doc.data());
         nameFunction(doc.data().nameIndex)
     });

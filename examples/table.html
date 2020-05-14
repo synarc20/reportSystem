@@ -13,6 +13,7 @@
 
  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.  -->
 <!DOCTYPE html>
+
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
 <html lang="en">
@@ -32,6 +33,31 @@
     <link href="../assets/css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="../assets/css/demo.css" rel="stylesheet" />
+
+    <style>
+        #div1 {
+          width: 350px;
+          height: 70px;
+          padding: 10px;
+          border: 1px solid #aaaaaa;
+        }
+        </style>
+
+    <script>
+        function allowDrop(ev) {
+          ev.preventDefault();
+        }
+        
+        function drag(ev) {
+          ev.dataTransfer.setData("text", ev.target.id);
+        }
+        
+        function drop(ev) {
+          ev.preventDefault();
+          var data = ev.dataTransfer.getData("text");
+          ev.target.appendChild(document.getElementById(data));
+        }
+        </script>
 </head>
 
 <body>
@@ -54,42 +80,20 @@ Report                    </a>
                             <p>Dashboard</p>
                         </a>
                     </li>
-                    <li>
-                        <a class="nav-link" href="./user.html">
-                            <i class="nc-icon nc-circle-09"></i>
-                            <p>User Profile</p>
-                        </a>
-                    </li>
+   
                     <li class="nav-item active">
                         <a class="nav-link" href="./table.html">
                             <i class="nc-icon nc-notes"></i>
-                            <p>Forms</p>
+                            <p>New Forms</p>
                         </a>
                     </li>
                     <li>
                         <a class="nav-link" href="./typography.html">
                             <i class="nc-icon nc-paper-2"></i>
-                            <p>Typography</p>
+                            <p>Form One</p>
                         </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="./icons.html">
-                            <i class="nc-icon nc-atom"></i>
-                            <p>Icons</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="./maps.html">
-                            <i class="nc-icon nc-pin-3"></i>
-                            <p>Maps</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="./notifications.html">
-                            <i class="nc-icon nc-bell-55"></i>
-                            <p>Notifications</p>
-                        </a>
-                    </li>
+                    </li>d
+                  
                     <li class="nav-item active active-pro">
                         <a class="nav-link active" href="upgrade.html">
                             <i class="nc-icon nc-alien-33"></i>
@@ -169,10 +173,14 @@ Report                    </a>
             <div class="content">
 
                 <div class="two">
-                    <h4>Frequently Used Form Fields</h4><button class = "btn btn-primary" onclick="nameFunction()">Name</button>
-                    <button  class = "btn btn-primary" onclick="emailFunction()">Email</button>
-                    <button class = "btn btn-primary" onclick="contactFunction()">Contact</button>
-                    <button class = "btn btn-primary"onclick="textareaFunction()">Message</button>
+                    <h4>Frequently Used Form Fields</h4>
+                    
+                    <input class = "btn btn-primary" placeholder="Enter Form Heading" ></input>
+                    <br >
+                    <button class = "btn btn-primary" onclick="nameFunction()">Text Input</button>
+                    <button  class = "btn btn-primary" onclick="emailFunction()">Dropdown Item</button>
+                    <button class = "btn btn-primary" onclick="contactFunction()">Check Box</button>
+                    <button class = "btn btn-primary"onclick="textareaFunction()">Radio Buttons</button>
                     <button class = "btn btn-primary" onclick="resetElements()">Reset</button>
                     </div>
 
@@ -185,7 +193,20 @@ Report                    </a>
                     
 
                     </form>
+                    
                     <button class = "btn btn-primary" onclick="writeData()">Write</button>
+                </div>
+                <div>
+                    <h4>Drag The items here to design the page</h4>
+                    <form action="#" id="mainform2" method="get" name="mainform2">
+                        <span id="myForm2"></span>
+
+
+
+                        <p></p>
+                        
+    
+                        </form>
                 </div>
 
 <!--                   
